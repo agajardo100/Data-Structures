@@ -1,6 +1,4 @@
 
-@SuppressWarnings("unchecked")
-
 public class BinarySearchTree<AnyType extends Comparable<AnyType>> {
 	
 	private BinaryNode<AnyType> root;

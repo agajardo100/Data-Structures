@@ -5,9 +5,9 @@ public class AVLTree <AnyType extends Comparable<AnyType>> {
 	private avlNode<AnyType> root;
 	
 		protected class avlNode<E>{
-			protected E data;
-			protected int height;
-			protected avlNode<E> rightChild;
+			protected E data;					// Generic data
+			protected int height;				// The height of the node
+			protected avlNode<E> rightChild;	
 			protected avlNode<E> leftChild;
 		
 			public avlNode(){
@@ -45,16 +45,17 @@ public class AVLTree <AnyType extends Comparable<AnyType>> {
     
 	/*
 	 * Internal method that returns height 
-	 * of a subtree */
+	 * of a subtree 
+	 */
 	private int height(avlNode<AnyType> t){
 		return  t== null ? -1: t.height; 
 	}
 	
-	/* Insert element into AVL Tree recursively */ 
+	/* Insert element into AVL Tree */ 
 	public void insert(AnyType element) throws Exception{
 		root= insert(element, root);
 	}
-	
+	/* Recursive private method to insert into AVL Tree */
 	private avlNode<AnyType> insert(AnyType element, avlNode<AnyType> t) throws Exception{
 		if (t==null)  //found location to insert
 			t = new avlNode<AnyType>(element);
