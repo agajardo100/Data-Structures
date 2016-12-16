@@ -10,11 +10,11 @@ public class Stack<T> {
 	
 	/* 
 	 * Initialize an empty stck with default
-	 * capacity of 50.
+	 * capacity of 20.
 	 */
 	public Stack(){
-		max = 50;
-		data = (T[]) new Object[50];
+		max = 20;
+		data = (T[]) new Object[20];
 		top = -1;
 	}
 	
@@ -78,10 +78,10 @@ public class Stack<T> {
 	
 	@Override
 	public String toString(){
-		String stackString = "";
+		StringBuilder s = new StringBuilder();
 		for(int i = top; i <= 0; i--)
-			stackString = stackString + data[i].toString() + "\n";
-		return stackString;
+			s.append(data[i].toString()+" ");
+		return s.toString();
 	}
 	
 	
