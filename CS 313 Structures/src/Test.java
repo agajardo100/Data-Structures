@@ -2,20 +2,20 @@
 public class Test {
 
 	public static void main(String args[]) throws Exception{
-		/*
+		
 		// Stack Test
-		Stack<String>mystack = new Stack<String>(10);
+		StackList<Integer>mystack = new StackList<Integer>();
 		System.out.println("Test Stack:");
-		mystack.push("5");
-		mystack.push("4");
-		mystack.push("3");
-		mystack.push("2");
-		mystack.push("1");
+		mystack.push(5);
+		mystack.push(4);
+		mystack.push(3);
+		mystack.push(2);
+		mystack.push(1);
 		
-		while(! mystack.isEmpty()){
-			System.out.println(mystack.pop());
+		for( int c :mystack){
+			System.out.println(c);
 		}
-		
+		/*
 		//Queue Test
 		Queue<String>myqueue = new Queue<String>();
 		System.out.println("Test Stack:");
@@ -52,7 +52,6 @@ public class Test {
 		System.out.println("\nCurrent Root is "+my_tree.getRoot());
 		System.out.println("AVL Tree");
 		my_tree.inOrder();
-		*/
 		
 		MaxHeap<String> myHeap = new MaxHeap<String>(32);
 		String[] numbers = new String[]{"1", "2", "3", "4", "5","6","7"};
@@ -60,5 +59,6 @@ public class Test {
 			myHeap.insert(s);
 		myHeap.print();
 		myHeap.deleteMax();
+		*/
 	}
 }

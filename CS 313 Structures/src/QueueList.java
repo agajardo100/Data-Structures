@@ -36,6 +36,14 @@ public class QueueList<AnyType> implements Iterable<AnyType>{
 		return rear.next == null;
 	}
 	
+	/* Make Queue logically empty */
+	public void makeEmpty(){
+		if (isEmpty())
+			throw new NoSuchElementException("Stack is already empty");
+		rear = null;
+		size = 0;
+	}
+	
 	/*
 	 * Add an object to the end of the Queue
 	 * Runtime O(1)
@@ -87,7 +95,8 @@ public class QueueList<AnyType> implements Iterable<AnyType>{
     } 
 	
 	/* 
-	 * Returns an iterator that goes through elements Queue
+	 * Returns an iterator that goes through elements Queue starting
+	 * at the front element, rear.next
 	 */
 	@Override
 	public Iterator<AnyType> iterator() {
@@ -96,16 +105,13 @@ public class QueueList<AnyType> implements Iterable<AnyType>{
 		
 	private class QueueIterator implements Iterator<AnyType> {
 		private Node<AnyType> current = rear.next;
-
+			
+			@Override
 	        public boolean hasNext(){ 
 	        	return current != null;
 	        }
-	        
-	        /* Unimplemented function */
-	        public void remove(){ 
-	        	throw new UnsupportedOperationException();
-	        }
-
+			
+			@Override
 	        public AnyType next() {
 	            if (!hasNext()) 
 	            	throw new NoSuchElementException();

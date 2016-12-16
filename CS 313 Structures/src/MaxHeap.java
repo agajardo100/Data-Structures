@@ -65,6 +65,7 @@ public class MaxHeap <AnyType extends Comparable<AnyType>> {
 	/*
 	 * Insert element into Heap Array.
 	 * heapifyUp to maintain heap order property
+	 * 
 	 * Best/Average Case: 	O( 1 )
 	 * Worst Case: 			O(lg n)
 	 */
